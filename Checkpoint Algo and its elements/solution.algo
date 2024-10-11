@@ -1,0 +1,21 @@
+ALGORITHM sentence_analyzer
+VAR
+    length, words, vowels, i: INTEGER := 0;
+    vowelArr : ARRAY_OF STRING[]:= ["a","e","u","i","o"]
+    sentence : STRING;
+BEGIN
+    Read(sentence);
+    WHILE (sentence[i] <> ".") DO
+        length++;
+        IF (sentence[i] === " " ) THEN
+            words++;
+        END_IF
+        IF (sentence[i] in vowelArr) THEN
+            vowels++;
+        END_IF
+        i++;
+    END_WHILE
+    Write("length of the sentence:", length);
+    Write("Words", words);
+    Write("Vowels", vowels);
+END
